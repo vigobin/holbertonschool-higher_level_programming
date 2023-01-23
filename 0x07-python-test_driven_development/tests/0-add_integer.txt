@@ -28,3 +28,15 @@ One input:
 Float and negative input:
     >>> add_integer(100.3, -2)
     98
+
+String input:
+    >>> add_integer(4, "School")
+    Traceback (most recent call last):
+    ...
+    TypeError: b must be an integer
+
+None input:
+    >>> add_integer(None)
+    Traceback (most recent call last):
+    ...
+    TypeError: a must be an integer
