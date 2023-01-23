@@ -53,6 +53,9 @@ class Rectangle:
             return ()
         print_rectangle = ""
         for i in range(self.__height):
-            print_rectangle += "#" * self.__width + "\n"
+            if i == self.__height - 1:
+                print_rectangle += "#" * self.__width
+            else:
+                print_rectangle += "#" * self.__width + "\n"
 
         return print_rectangle
