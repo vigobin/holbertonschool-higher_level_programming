@@ -11,6 +11,10 @@ class TestMaxInteger(unittest.TestCase):
     def test_max_int(self):
         """tests normal usage"""
         self.assertEqual(max_integer([1, 2, 3, 4]), 4)
+        """test if empty"""
+        self.assertEqual(max_integer([]), None)
+        """tests for negatives"""
+        self.assertEqual(max_integer([-1, -3, -2, -4]), -1)
 
 
 if __name__ == '__main__':
