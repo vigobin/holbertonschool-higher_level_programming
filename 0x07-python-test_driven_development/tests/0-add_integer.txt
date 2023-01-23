@@ -1,0 +1,30 @@
+The ``add_integer`` module
+==========================
+
+Using ``add_integer``
+---------------------
+
+This is an example text file in reStructuredText format.  First import
+``add_integer`` from the ``0-add_integer`` module:
+
+    >>> add_integer = __import__('0-add_integer').add_integer
+
+Basic usage:
+    >>> add_integer(1, 2)
+    3
+
+Check for 0:
+    >>> add_integer(0)
+    98
+
+Negative input:
+    >>> add_integer(100, -2)
+    98
+
+One input:
+    >>> add_integer(2)
+    100
+
+Float and negative input:
+    >>> add_integer(100.3, -2)
+    98
