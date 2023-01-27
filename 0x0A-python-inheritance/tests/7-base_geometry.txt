@@ -9,8 +9,9 @@ This is an example text file in reStructuredText format.  First import class
 
     >>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
 
-Test for normal usage:
     >>> bg = BaseGeometry()
+
+Test for normal usage:
     >>> bg.integer_validator("int", 12)
 
 Test for type:
