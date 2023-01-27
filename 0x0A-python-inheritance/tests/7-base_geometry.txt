@@ -1,0 +1,38 @@
+The ``BaseGeometry`` class
+======================
+
+Using ``BaseGeometry``
+-----------------
+
+This is an example text file in reStructuredText format.  First import class
+``BaseGeometry`` from the ``7-Base_geometry`` module:
+
+    >>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
+
+Test for normal usage:
+    >>> bg = BaseGeometry()
+    >>> bg.integer_validator("int", 12)
+
+Test for type:
+    >>> bg.integer_validator("name", "John")
+    Traceback (most recent call last):
+    ...
+    TypeError: name must be an integer
+
+Test for age > 0:
+    >>> bg.integer_validator("age", 0)
+    Traceback (most recent call last):
+    ...
+    ValueError: age must be greater than 0
+
+Test for negative:
+    >>> bg.integer_validator("distance", -4)
+    Traceback (most recent call last):
+    ...
+    ValueError: distance must be greater than 0
+
+Test for area not implemented:
+    >>> bg.area()
+    Traceback (most recent call last):
+    ...
+    Exception: area() is not implemented
