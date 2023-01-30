@@ -7,5 +7,4 @@ def write_file(filename="", text=""):
     returns the number of characters written.
     """
     with open(filename) as f:
-        file1 = f.read()
-        file1.write(text)
+        file1 = f.write(text)
