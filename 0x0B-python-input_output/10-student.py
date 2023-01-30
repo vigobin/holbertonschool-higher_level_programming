@@ -12,3 +12,8 @@ class Student:
     def to_json(self, attrs=None):
         if type(attrs) != list:
             return self.__dict__
+        else:
+            temp_dict = {}
+            for i in attrs:
+                temp_dict[i] = self.__dict__[i]
+            return temp_dict
