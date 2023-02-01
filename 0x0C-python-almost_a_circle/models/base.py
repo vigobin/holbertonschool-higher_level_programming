@@ -28,3 +28,11 @@ class Base:
         with open(cls.__name__ + ".json", "w") as f:
             if list_objs is None:
                 return f.write([])
+    
+    @staticmethod
+    def from_json_string(json_string):
+        """returns the list of the JSON string representation json_string"""
+        if type(json_string) != str or len(json_string) == 0:
+            return []
+        else:
+            return json.loads(json_string)
