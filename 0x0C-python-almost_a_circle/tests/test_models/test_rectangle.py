@@ -10,3 +10,7 @@ class TestRectangle(unittest.TestCase):
     def test_objects(self):
         a = Rectangle(1, 1)
         b = Rectangle(1, 2, 0, 0, 1)
+
+
+if __name__ == "__main__":
+    unittest.main()

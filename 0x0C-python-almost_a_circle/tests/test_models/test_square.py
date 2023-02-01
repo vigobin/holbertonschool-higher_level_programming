@@ -10,3 +10,7 @@ class TestSquare(unittest.TestCase):
     def test_objects(self):
         a = Square(1)
         b = Square(4)
+
+
+if __name__ == "__main__":
+    unittest.main()
