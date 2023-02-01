@@ -46,3 +46,9 @@ class Base:
             dummy_attr = cls(1)
         dummy_attr.update(**dictionary)
         return dummy_attr
+
+    @classmethod
+    def load_from_file(cls):
+        """returns a list of instances"""
+        list_items = []
+        return list_items
