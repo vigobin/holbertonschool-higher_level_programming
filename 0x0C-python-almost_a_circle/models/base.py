@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """The Base class"""
 import json
+import os
 
 
 class Base:
@@ -53,5 +54,10 @@ class Base:
     @classmethod
     def load_from_file(cls):
         """returns a list of instances"""
-        list_items = []
-        return list_items
+        the_file = cls.__name__ + ".json"
+        try:
+            with open(the_file) as read_file:
+                write_to = Base.from_json_string(read_file())
+                return [cls.create(**the_dict) for the_dict in write_to]
+        except IOError:
+            return []
