@@ -6,6 +6,9 @@ from models.base import Base
 
 class TestBase(unittest.TestCase):
     """Defines the test class for Base"""
+
     def test_objects(self):
-        Base._Base__nb_objects = 0
-        self.assertEqual(Base._Base__nb_objects, 0)
+        a = Base(0)
+        self.assertEqual(a.id, 0)
+        b = Base(1)
+        self.assertEqual(b.id, 1)
