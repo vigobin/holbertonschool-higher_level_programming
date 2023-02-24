@@ -1,11 +1,12 @@
 #!/usr/bin/python3
-"""Cities by state function"""
+"""All cities by state function"""
 import MySQLdb
 from sys import argv
 
 
-def cities_by_state():
-    """Lists all cities from the database hbtn_0e_4_usa"""
+def all_cities_by_state():
+    """Takes in the name of a state as an argument and lists
+    all cities of that state, using the database hbtn_0e_4_usa"""
     db = MySQLdb.connect(host="localhost",
                          port=3306,
                          user=argv[1],
@@ -13,9 +14,10 @@ def cities_by_state():
                          db=argv[3])
 
     cur = db.cursor()
-    cur.execute("SELECT cities.id, cities.name, states.name"
+    cur.execute("SELECT cities.name"
                 "FROM cities JOIN states ON cities.state_id = states.id"
-                "ORDER BY id")
+                "AND states.name = '{}'"
+                "ORDER BY cities.id".format(argv[4]))
     query_rows = cur.fetchall()
 
     for row in query_rows:

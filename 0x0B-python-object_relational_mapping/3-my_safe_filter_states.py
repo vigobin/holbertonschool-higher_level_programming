@@ -21,7 +21,7 @@ def my_filter_states():
                     .format(argv[4]))
         query_rows = cur.fetchall()
 
-        for rows in query_rows:
+        for row in query_rows:
             print(row)
         cur.close()
         db.close()
