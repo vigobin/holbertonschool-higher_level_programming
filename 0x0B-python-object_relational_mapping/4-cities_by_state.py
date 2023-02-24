@@ -13,7 +13,9 @@ def cities_by_state():
                          db=argv[3])
 
     cur = db.cursor()
-    cur.execute("SELECT * FROM cities ORDER BY id")
+    cur.execute("SELECT cities.id, cities.name, states.name"
+                "FROM cities JOIN states ON cities.state_id = states.id"
+                "ORDER BY id")
     query_rows = cur.fetchall()
 
     for rows in query_rows:
