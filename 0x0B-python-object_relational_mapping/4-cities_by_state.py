@@ -1,0 +1,28 @@
+#!/usr/bin/python3
+"""Cities by state function"""
+import MySQLdb
+from sys import argv
+
+
+def cities_by_state():
+    """Lists all cities from the database hbtn_0e_4_usa"""
+    if len(argv) == 5:
+        db = MySQLdb.connect(host="localhost",
+                             port=3306,
+                             user=argv[1],
+                             passwd=argv[2],
+                             db=argv[3])
+
+        cur = db.cursor()
+        cur.execute("SELECT * FROM cities ORDER BY id")
+        query_rows = cur.fetchall()
+
+        for rows in query_rows:
+            print(row)
+        cur.close()
+        db.close()
+    else:
+        return
+
+    if __name__ == "__main__":
+        cities_by_state()
