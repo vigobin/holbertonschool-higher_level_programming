@@ -17,7 +17,8 @@ def a_state():
 
     rows = session.query(State).all()
     for state in rows:
-        print("{}: {}".format(state.id, state.name))
+        if 'a' in state.name:
+            print("{}: {}".format(state.id, state.name))
 
     session.close()
 
