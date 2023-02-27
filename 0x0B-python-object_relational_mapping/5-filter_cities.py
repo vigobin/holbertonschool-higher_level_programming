@@ -16,8 +16,8 @@ def all_cities_by_state():
     cur = db.cursor()
     cur.execute("SELECT cities.name"
                 "FROM cities JOIN states ON cities.state_id = states.id"
-                "AND states.name = '{}'"
-                "ORDER BY cities.id".format(argv[4]))
+                "WHERE states.name = %s"
+                "ORDER BY cities.id", (argv[4]))
     query_rows = cur.fetchall()
 
     for row in query_rows:
@@ -26,4 +26,4 @@ def all_cities_by_state():
     db.close()
 
     if __name__ == "__main__":
-        cities_by_state()
+        all_cities_by_state()
