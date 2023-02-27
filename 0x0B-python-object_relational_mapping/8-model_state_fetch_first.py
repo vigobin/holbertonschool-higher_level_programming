@@ -16,7 +16,7 @@ def first_state():
 
     f_state = session.query(State).first()
     if f_state:
-        print("{}: {}".format(State.id, State.name))
+        print("{}: {}".format(f_state.id, f_state.name))
     else:
         print("Nothing")
 
