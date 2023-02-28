@@ -20,5 +20,6 @@ def update_state():
 
     session.close()
 
-    if __name__ == "__main__":
-        update_state()
+
+if __name__ == "__main__":
+    update_state()
