@@ -18,11 +18,12 @@ def get_state():
     rows = session.query(State).all()
     for state in rows:
         if state.name == argv[4]:
-            print("{}".format(state.id))
+            print(state.id)
         else:
             print("Not found")
 
     session.close()
 
-    if __name__ == "__main__":
-        get_state()
+
+if __name__ == "__main__":
+    get_state()
