@@ -22,5 +22,6 @@ def first_state():
 
     session.close()
 
-    if __name__ == "__main__":
-        first_state()
+
+if __name__ == "__main__":
+    first_state()
