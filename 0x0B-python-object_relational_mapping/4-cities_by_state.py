@@ -22,5 +22,7 @@ def cities_by_state():
         print(row)
     cur.close()
     db.close()
+
+
 if __name__ == "__main__":
     cities_by_state()
