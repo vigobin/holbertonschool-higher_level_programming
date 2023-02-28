@@ -19,5 +19,6 @@ def state_fetch_all():
 
     session.close()
 
+
 if __name__ == "__main__":
     state_fetch_all()
