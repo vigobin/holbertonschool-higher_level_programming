@@ -17,7 +17,7 @@ def delete_state():
 
     state = session.query(State)
     for row in state:
-        if 'a' in row.name:
+        if '%a%' in row.name:
             session.delete(row)
 
     session.commit()
