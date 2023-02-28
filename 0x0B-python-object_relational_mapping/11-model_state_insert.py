@@ -21,5 +21,6 @@ def add_state():
 
     session.close()
 
-    if __name__ == "__main__":
-        add_state()
+
+if __name__ == "__main__":
+    add_state()
