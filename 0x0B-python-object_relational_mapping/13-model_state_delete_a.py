@@ -15,12 +15,14 @@ def delete_state():
     Base.metadata.create_all(engine)
     session = Session(engine)
 
-    state = session.query(State).all()
+    state = session.query(State)
     for row in state:
         if 'a' in row.name:
-            session.delete()
+            session.delete(row)
 
+    session.commit()
     session.close()
 
-    if __name__ == "__main__":
-        delete_state()
+
+if __name__ == "__main__":
+    delete_state()
