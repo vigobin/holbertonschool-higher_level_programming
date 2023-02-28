@@ -19,9 +19,11 @@ def my_filter_states():
     query_rows = cur.fetchall()
 
     for row in query_rows:
-        print(row)
+        if row[1] == argv[4]:
+            print(row)
     cur.close()
     db.close()
 
-    if __name__ == "__main__":
-        my_filter_states()
+
+if __name__ == "__main__":
+    my_filter_states()
