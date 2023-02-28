@@ -22,5 +22,6 @@ def a_state():
 
     session.close()
 
-    if __name__ == "__main__":
-        a_state()
+
+if __name__ == "__main__":
+    a_state()
