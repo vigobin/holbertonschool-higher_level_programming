@@ -15,7 +15,8 @@ def fetch_cities():
     Base.metadata.create_all(engine)
 
     session = Session(engine)
-    c_query = session.query(State, City).order_by(City.id).filter(City.state_id == State.id).all()
+    c_query = session.query(State, City).order_by(City.id).filter(
+        City.state_id == State.id).all()
 
     for state, city in c_query:
         print("{}: ({}) {}".format(state.name, city.id, city.name))
