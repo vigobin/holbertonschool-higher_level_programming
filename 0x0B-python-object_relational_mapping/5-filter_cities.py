@@ -21,7 +21,7 @@ def all_cities_by_state():
     query_rows = cur.fetchall()
 
     for row in query_rows:
-        print(row[0] + ",")
+        print("{}, ".format(row[0]), end="")
     cur.close()
     db.close()
 
