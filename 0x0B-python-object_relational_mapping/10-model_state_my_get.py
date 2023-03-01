@@ -15,12 +15,11 @@ def get_state():
     Base.metadata.create_all(engine)
     session = Session(engine)
 
-    rows = session.query(State).all()
+    rows = session.query(State).filter(State.name == argv[4])
     for state in rows:
-        if state.name == argv[4]:
-            print(state.id)
-        else:
-            print("Not found")
+        print(state.id)
+    if rows is not argv[4]:
+        print("Not found")
 
     session.close()
 
