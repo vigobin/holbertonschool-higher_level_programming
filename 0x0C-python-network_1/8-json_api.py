@@ -12,7 +12,7 @@ def search():
         q = argv[1]
     else:
         q = ""
-    
+
     values = {'q': q}
 
     r = requests.post(url, data=values)
