@@ -8,8 +8,8 @@ def post1():
     """Takes in a URL and an email address, sends a POST request to the passed
     URL with the email as a parameter,
     and finally displays the body of the response."""
-    response = requests.post(argv[1])
-    print(response)
+    response = requests.post(argv[1], data={"email": argv[2]})
+    print(response.text)
 
 
 if __name__ == '__main__':
