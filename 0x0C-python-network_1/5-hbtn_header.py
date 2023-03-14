@@ -9,7 +9,7 @@ def response():
     value of the variable X-Request-Id"""
     response = requests.get(argv[1])
     r = response.headers
-    print(r['X-Request-Id'])
+    print(r.get('X-Request-Id'))
 
 
 if __name__ == '__main__':
